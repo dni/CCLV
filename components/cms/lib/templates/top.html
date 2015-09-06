@@ -54,6 +54,6 @@
 <% } %>
 <% if (buttons.length > 0) { %>
     <% buttons.forEach(function(button){  %>
-      <a class="btn btn-default" href="#<%= moduleName %>/action/<%= button %>"><%= i18n[button] %></span></a>
+    <a class="btn btn-default" id="<%= button %>" href="#<%= moduleName %>/action/<%= button %>"><%= i18n[button] %></span></a>
     <% }); %>
 <% } %>

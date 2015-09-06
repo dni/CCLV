@@ -7,11 +7,20 @@
   "dbTable": "tracks",
   "navigation": true,
   "controls": {
+    "buttons": ["toggleRecord"],
     "create": false
   },
   "fields": [ ],
   "columns": ["user", "crdate"],
   "model": {
+    "start" : {
+      "db": "Date",
+      "type": "date"
+    },
+    "end" : {
+      "db": "Date",
+      "type": "date"
+    },
     "points" : {
       "db": [],
       "type": "hidden"

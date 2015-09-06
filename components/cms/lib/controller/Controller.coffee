@@ -30,6 +30,7 @@ define [
       unless @MapView? then @MapView = MapView
       unless @TopView? then @TopView = TopView
       unless @EmptyView? then @EmptyView = EmptyView
+      @after?()
 
     defaultView: ->
       @renderTopView()
@@ -63,6 +64,7 @@ define [
       @topview.on "export", @exportSelected, @
       # @topview.on "removeSelected", @removeSelected, @
       App.view.listTopRegion.show @topview
+      @trigger "afterRenderTopView"
 
     newEditView:(model)->
       @detailView = new @EditView
