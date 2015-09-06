@@ -1,0 +1,20 @@
+{
+  "moduleName": "TrackModule",
+  "modelName": "Track",
+  "collectionName": "Tracks",
+  "url": "/tracks/",
+  "urlRoot": "tracks",
+  "dbTable": "tracks",
+  "navigation": true,
+  "controls": {
+    "create": false
+  },
+  "fields": [ ],
+  "columns": ["user", "crdate"],
+  "model": {
+    "points" : {
+      "db": [],
+      "type": "hidden"
+    }
+  }
+}

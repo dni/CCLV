@@ -1,8 +1,8 @@
 define [
   'cs!App'
   'cs!lib/view/MapView'
-  'cs!./MapItemView'
-], (App, MapView, MapItemView ) ->
+  'cs!./MapListView'
+], (App, MapView, MapListView ) ->
   class ExtendedMapView extends MapView
 
     afterRender:->
@@ -10,7 +10,7 @@ define [
       @startPositionTracking()
       # @initChildren()
       App.vent.on "ready", =>
-        @childView = new MapItemView collection: App.Finds
+        @childView = new MapListView collection: App.Finds
         @$el.append @childView.render().el
 
 

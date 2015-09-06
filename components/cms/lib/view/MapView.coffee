@@ -18,7 +18,6 @@ define [
 
     afterRender:->
       @createMap()
-      # console.log "lol"
       @startPositionTracking()
       # @initChildren()
       @childView = new MapListView collection:@collection
