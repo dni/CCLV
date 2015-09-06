@@ -9,6 +9,7 @@ define [
         list: "list"
         graph: "stats"
         calendar: "calendar"
+      buttons: []
       activeView: "list"
       filters: {}
       activeFilters: []
