@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title">Show File <%= title %></h4>
+</div>
+<div class="modal-body clearfix">
+  <div class="row">
+    <div class="col-md-12">
+      <% if(type.split("/")[0]=="image") { %>
+        <img src="./public/files/<%= smallPic %>" alt="<%= title %>" />
+      <% } else { %>
+        <p width="100"><%= title %><p>
+      <% } %>
+      <p><%= type %></p>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="editFile btn btn-primary">Edit</button>
+  <button class="deleteFile btn btn-danger">Delete</button>
+</div>

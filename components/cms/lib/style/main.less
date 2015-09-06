@@ -1,0 +1,172 @@
+/*
+ * dni's less template ;)
+ */
+
+// bootstrap 3.1.0,
+// find the mixins, variables here
+// http://twitter.github.com/bootstrap/less.html
+@import "../../vendor/style/bootstrap.less";
+@import "../../vendor/style/fullcalendar.css";
+@import "../../vendor/style/bootstrap-datetimepicker.less";
+@import "../../vendor/style/jquery.minicolors.css";
+@import "../../vendor/style/backgrid.css";
+@import "../../vendor/style/dc.css";
+@import "../../vendor/style/backgrid-filter.css";
+@import "../../vendor/style/backgrid-select-all.css";
+@import "../../vendor/style/Jcrop.css";
+
+
+@import "d3.less";
+
+@icon-font-path:"/public/fonts/";
+@screen-lg-min:1400px;
+#map {height:600px}
+#map img {max-width:none;}
+.navbar {margin-bottom:0;}
+.tab-content {padding-top:18px;}
+
+.navbar-inner {border-radius:0px;}
+.nav > li > form {
+  overflow:hidden;
+  line-height:2;
+  color:@navbar-inverse-brand-color;
+  .fileinput-button {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+  }
+}
+
+#filters li {position:relative;
+  .edit-filter {position:absolute; top:0px; right:0px; }
+}
+#subnavigation {
+  position: fixed;
+  z-index:3;
+  left: 6px;
+  top: 120px;
+  > div {margin-bottom:12px;}
+}
+
+#controls{
+  >div>* {margin:0 6px 5px 0;}
+  padding:6px 0 0 0;
+  background:#ddd;
+}
+
+.active .create {display:inline-block;}
+
+html {
+  font-family:Arial;
+  font-size:12px;
+  height:100%;
+}
+
+body {margin:50px 0 0 0;padding:0;background:white;}
+
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.flex {
+  padding:12px;
+  max-height:100%;
+  box-sizing: border-box
+}
+
+/* LOGIN */
+#login > div {display:none;}
+
+.list-btns {
+  display: block;
+  margin: 12px -6px 0;
+}
+
+/* CONTENT */
+#content {padding:42px 0;}
+#content audio, #content video { width: 100%; }
+#content p { word-break: break-word; }
+#content h1 {
+  margin-top:0;
+}
+
+.fileinput-button {
+  position:relative;
+
+  input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 20px;
+    direction: ltr;
+    cursor: pointer;
+    height:32px;
+  }
+}
+.page {margin-bottom:12px;}
+.number {font-size: 16px;}
+.form-inline select {margin-left:6px;}
+
+::selection {background:rgb(100,100,100);color:white;}
+
+pre ::selection {background:rgb(255,255,255);color:black;}
+
+.info {padding:5%;}
+
+.buttons, .buttons-top, .page {.btn {margin-right:6px;}}
+.buttons-top {margin-bottom:42px;}
+
+footer {padding-left:2%;color:white;}
+footer a {color:#008000;}
+
+
+/* LIST */
+.list {display:none;}
+.list.active {display:block;}
+
+#pageList {ul{list-style:none;margin:18px 0;padding:0;}}
+
+#info {
+  position: absolute;
+  bottom:0;
+}
+
+#pages {margin-bottom:48px;}
+
+.related > div > div {margin-bottom:62px;}
+.file-list {.clearfix();margin:32px 0;}
+.preview-item {
+  max-height:100px;
+  overflow:hidden;
+  width:150px;border:1px solid #ddd;
+  float:left;
+  margin-right:12px;
+  margin-bottom:12px;
+}
+
+
+.modal-header {
+  min-height: 50px;
+}
+
+@media (max-width: @screen-sm) {
+  .row {
+    margin-left:0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  .container {
+    width: 95%;
+  }
+  #setting-details {
+    h1,h2 {width:100%;}
+  }
+}

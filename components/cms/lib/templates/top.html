@@ -1,0 +1,54 @@
+<span><%= moduleName %></span>
+<div id="views" class="btn-group" role="group" aria-label="...">
+  <% Object.keys(views).forEach(function(key){ var view = views[key]; %>
+    <% if (activeView == key) { var active = "active";} else { var active = "" } %>
+    <a data-uid="<%= key %>" href="#<%= moduleName %>/<%= key %>/" class="view <%= active %> btn btn-default"><span class="glyphicon glyphicon-<%= view %>"></span></a>
+  <%  }); %>
+</div>
+<% if (filter) { %>
+<div class="btn-group">
+  <!-- Single button -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <span class="glyphicon glyphicon-filter"></span> <span class="caret"></span>
+    </button>
+    <ul id="filters" class="dropdown-menu" role="menu">
+      <% filters.forEach(function(filter){  %>
+        <% if (activeFilters.indexOf(filter.get("_id")) == -1) { var active = "";} else { var active = "active" } %>
+        <li class="<%= active %>">
+          <a class="filter" href="#<%= moduleName %>/filter/<%= filter.get("_id") %>"> <%= filter.getValue("title") %> </a>
+          <a href="#Filter/<%= filter.get('_id') %>" class="edit-filter"> <span class="glyphicon glyphicon-edit"></span> </a>
+        </li>
+        <%  }); %>
+      <li class="divider"></li>
+      <li><a href="#FilterModule/new/<%= moduleName %>"><span class="glyphicon glyphicon-plus"></span> create new</a></li>
+    </ul>
+  </div>
+</div>
+<% } %>
+<% if (group) { %>
+<!-- Single button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    <span class="glyphicon glyphicon-link"></span> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">User</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Monthly</a></li>
+    <li><a href="#">Yearly</a></li>
+  </ul>
+</div>
+<% } %>
+<% if (deleteAble) { %>
+<!-- <button class="remove btn btn-default"><span class="glyphicon glyphicon-trash"></span></button> -->
+<% } %>
+<% if (importExport) { %>
+<div class="btn-group">
+  <button class="import btn btn-default">Import</button>
+  <button class="export btn btn-default" >Export</button>
+</div>
+<% } %>
+<% if (create) { %>
+    <a class="create btn btn-default" href="#<%= moduleName %>/new/"><span class="glyphicon glyphicon-plus"></span></a>
+<% } %>

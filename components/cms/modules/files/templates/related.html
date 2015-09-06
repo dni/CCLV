@@ -1,0 +1,8 @@
+<div class="file-list sortable"></div>
+<a class="addFile btn btn-primary">
+  <% if (!fieldrelation) { %>
+      <i class="glyphicon glyphicon-plus"></i> <%= t.addFiles %>
+    <% } else { %>
+      <i class="glyphicon glyphicon-plus"></i> <%= t.addFile %>
+    <% } %>
+</a>
