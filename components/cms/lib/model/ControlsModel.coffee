@@ -5,9 +5,9 @@ define [
   class Model extends Backbone.Model
     defaults:
       views:
+        map: "map-marker"
         list: "list"
         graph: "stats"
-        map: "map-marker"
         calendar: "calendar"
       activeView: "list"
       filters: {}

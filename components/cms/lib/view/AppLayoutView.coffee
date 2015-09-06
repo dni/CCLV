@@ -9,6 +9,7 @@ define [
 
     regions:
       navigationRegion:"#navbar"
+      mapRegion:"#map"
       contentRegion:"#content"
       detailRegion:"#details"
       infoRegion:"#info"

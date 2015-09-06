@@ -139,11 +139,7 @@ define [
     map:->
       @controls.set "activeView", "map"
       @renderTopView() unless App.view.listTopRegion.currentView?
-      App.view.contentRegion.show new @MapView
-        config: @Config
-        i18n: @i18n
-        className: "container"
-        collection: @getCollection()
+      App.view.contentRegion.empty()
 
     init: ->
       App.view.detailRegion.empty()
