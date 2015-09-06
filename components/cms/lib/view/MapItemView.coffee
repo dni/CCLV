@@ -34,6 +34,11 @@ define [
       @destroyMarker()
       @createMarker()
 
+    getIcon: ->
+      strokeColor: "red"
+      path:App.google.SymbolPath.CIRCLE
+      scale: 5
+
     createMarker:->
       that = @
       # @updateRelations()
@@ -41,12 +46,7 @@ define [
       @marker = new App.google.Marker
         map: App.map
         position: @latlng()
-        icon:
-          strokeColor: "red"
-          path:App.google.SymbolPath.CIRCLE
-          scale: 5
+        icon: @getIcon()
       @listener = App.google.event.addListener @marker, 'click', ->
         that.infoWindow.open App.map, that.marker
 
-  class ListView extends Marionette.CollectionView
-    childView: ListItemView

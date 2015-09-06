@@ -1,7 +1,7 @@
 define [
   'cs!App'
   'cs!lib/view/MapView'
-  'cs!lib/view/MapItemView'
+  'cs!./MapItemView'
 ], (App, MapView, MapItemView ) ->
   class ExtendedMapView extends MapView
 
@@ -9,7 +9,8 @@ define [
       @createMap()
       @startPositionTracking()
       # @initChildren()
-      @childView = new MapItemView collection: App.Finds
-      @$el.append @childView.render().el
+      App.vent.on "ready", =>
+        @childView = new MapItemView collection: App.Finds
+        @$el.append @childView.render().el
 
 
