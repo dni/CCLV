@@ -1,0 +1,5 @@
+define({
+    "attributes": {
+      "title": "Title",
+    },
+});

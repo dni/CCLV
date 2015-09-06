@@ -1,0 +1,36 @@
+{
+  "moduleName": "SubcategoryModule",
+  "modelName": "Subcategory",
+  "collectionName": "Subcategories",
+  "url": "/subcategories/",
+  "urlRoot": "subcategories",
+  "dbTable": "subcategories",
+  "navigation": true,
+  "fields": ["title", "symbol", "size"],
+  "columns": ["title"],
+  "model": {
+    "title" : {
+      "db": "String",
+      "type": "text"
+    },
+    "symbol" : {
+      "db": "String",
+      "type": "select",
+      "options": {
+        "CIRCLE": "CIRCLE",
+        "BACKWARD_CLOSED_ARROW": "BACKWARD_CLOSED_ARROW",
+        "FORWARD_CLOSED_ARROW": "FORWARD_CLOSED_ARROW",
+        "BACKWARD_OPEN_ARROW": "BACKWARD_OPEN_ARROW",
+        "FORWARD_OPEN_ARROW": "FORWARD_OPEN_ARROW"
+      }
+    },
+    "size" : {
+      "db": "String",
+      "type": "range",
+      "value": "5",
+      "min": 3,
+      "max": 8,
+      "step": 0.5
+    }
+  }
+}
