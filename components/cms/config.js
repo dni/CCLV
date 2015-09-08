@@ -12,6 +12,9 @@ require.config({
     'jquery.tinymce': 'tinymce/jquery.tinymce.min',
   },
   shim: {
+    bootstrap: {
+      deps: ['jquery']
+    },
     'crossfilter': {
       deps: [],
       exports: 'crossfilter'
