@@ -18,6 +18,7 @@ require.config({
     },
     'jquery.tinymce':['jquery', 'tinymce'],
     'minicolors':['jquery'],
+    bootstrap:{deps:['jquery']},
     'fullcalendar':['jquery', 'moment'],
     'backgrid': {
       deps: ['jquery', 'underscore', 'backbone'],
@@ -27,8 +28,7 @@ require.config({
     'backgrid-filter': { deps: ['backbone', 'backgrid']},
   }
 });
-require(['cs!App', 'backbone', 'jquery'], function(App, Backbone, $){
-    $(document).off('.data-api');
+require(['cs!App', 'backbone', 'jquery', 'bootstrap'], function(App, Backbone, $, bootstrap){
     App.init()
     App.vent.on('ready', function(){
       App.isReady = true

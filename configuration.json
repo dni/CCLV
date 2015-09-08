@@ -1,6 +1,6 @@
 {
-  "port": 2010,
-  "dbname": "oophaga",
+  "port": 2060,
+  "dbname": "cclv",
   "production": false,
   "adminroute": "/"
 }
