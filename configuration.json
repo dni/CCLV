@@ -1,6 +1,6 @@
 {
   "port": 2060,
   "dbname": "cclv",
-  "production": true,
+  "production": false,
   "adminroute": "/"
 }

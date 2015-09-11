@@ -6,6 +6,7 @@
     "cs!sysmodules/user/UserModule",
     "cs!sysmodules/files/FileModule",
     "cs!sysmodules/messages/MessageModule",
+    "cs!modules/map/MapModule",
     "cs!modules/finds/FindsModule",
     "cs!modules/tracks/TrackModule",
     "cs!modules/category/CategoryModule",

@@ -7,7 +7,7 @@
   "dbTable": "categories",
   "navigation": true,
   "fields": ["title", "color"],
-  "columns": ["title"],
+  "columns": ["color", "title"],
   "model": {
     "title" : {
       "db": "String",
