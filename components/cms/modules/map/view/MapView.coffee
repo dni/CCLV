@@ -10,6 +10,7 @@ define [
       @createMap()
       @startPositionTracking()
       # @initChildren()
+      App.vent.on "newPosition", @centermap
       App.vent.on "ready", =>
         @findView = new MapListView collection: App.Finds
         @trackView = new MapTrackListView collection: App.Tracks
