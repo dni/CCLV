@@ -1,15 +1,14 @@
 {
   "backend_modules": [
-    "cs!modules/settings/SettingsModule",
-    "cs!modules/cms/CmsModule",
-    "cs!modules/filters/FilterModule",
-    "cs!modules/user/UserModule",
-    "cs!modules/files/FileModule",
-    "cs!modules/messages/MessageModule",
+    "cs!sysmodules/settings/SettingsModule",
+    "cs!sysmodules/cms/CmsModule",
+    "cs!sysmodules/filters/FilterModule",
+    "cs!sysmodules/user/UserModule",
+    "cs!sysmodules/files/FileModule",
+    "cs!sysmodules/messages/MessageModule",
     "cs!modules/finds/FindsModule",
     "cs!modules/tracks/TrackModule",
     "cs!modules/category/CategoryModule",
-    "cs!modules/subcategory/SubcategoryModule",
-    "cs!modules/map/MapModule"
+    "cs!modules/subcategory/SubcategoryModule"
   ]
 }

@@ -1,7 +1,7 @@
 define [
   'cs!lib/view/ListView'
   'cs!lib/controller/LayoutController'
-  'cs!modules/files/view/RelatedFileView'
+  'cs!sysmodules/files/view/RelatedFileView'
 ],
 ( ListView, LayoutController, RelatedFileView) ->
 
@@ -13,6 +13,7 @@ define [
     columns: ["title"]
 
   class ExampleController extends LayoutController
+
     customaction: ->
       alert "custom action"
 
