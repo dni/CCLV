@@ -17,6 +17,8 @@ define [
 
   class EditView extends Marionette.LayoutView
     template: Template
+    templateHelpers: ->
+      vhs: _.extend Utils.Viewhelpers, config: @options.Config, Config: @options.Config, t: attributes: _.extend @options.i18n.attributes, i18n.attributes
     regions:
       relatedRegion: "#relations"
 
@@ -30,10 +32,6 @@ define [
       @renderRelatedViews()
       @initFields()
 
-    templateHelpers: ->
-      vhs: _.extend Utils.Viewhelpers,
-        Config: @options.Config,
-        t: attributes: _.extend @options.i18n.attributes, i18n.attributes
 
     getFields:->
       @options.Config.model
