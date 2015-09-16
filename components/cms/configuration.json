@@ -9,6 +9,7 @@
     "cs!modules/map/MapModule",
     "cs!modules/finds/FindsModule",
     "cs!modules/findsites/FindsiteModule",
+    "cs!modules/finds/FindsModule",
     "cs!modules/tracks/TrackModule",
     "cs!modules/category/CategoryModule",
     "cs!modules/subcategory/SubcategoryModule"
