@@ -1,24 +1,24 @@
 define({
   "root": {
-    "navigation": "Finds",
-    "details": "Find details",
+    "navigation": "Findsites",
+    "details": "Findsite details",
     "attributes":  {
       "title": "Title",
       "category": "Category",
       "subcategory": "Subcategory",
       "detector": "Detector",
-      "type": "Find Type",
-      "date": "Find date",
+      "type": "Findsite Type",
+      "date": "Findsite date",
       "teaserimage": "Teaserimage",
       "description": "Description",
       "place": "Place of storage",
       "lng": "Longitude",
       "lat": "Latitude"
     },
-    "emptyMessage": "The find does not exist anymore",
-    "newModel": "created new find",
-    "deleteModel": "deleted find",
-    "updateModel": "updated find"
+    "emptyMessage": "The findsite does not exist anymore",
+    "newModel": "created new findsite",
+    "deleteModel": "deleted findsite",
+    "updateModel": "updated findsite"
   },
   "de": true
 });
