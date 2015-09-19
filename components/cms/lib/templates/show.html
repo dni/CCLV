@@ -9,7 +9,7 @@
       <% vhs.foreachAttribute(obj, function(key, attribute){ %>
         <tr>
           <td><b><%= key %>:</b></td>
-          <td> <%= attribute.value %> </td>
+          <td> <%= vhs.renderValue(key, obj) %> </td>
         </tr>
       <% }); %>
   </table>
@@ -18,7 +18,7 @@
       <% vhs.foreachMetaAttribute(obj, function(key, attribute){ %>
         <tr>
           <td><b><%= key %>:</b></td>
-          <td> <%= attribute.value %> </td>
+          <td> <%= vhs.renderValue(key, obj) %> </td>
         </tr>
       <% }); %>
   </table>
@@ -26,6 +26,6 @@
 </div>
 <div class="modal-footer">
   <a class="btn btn-primary" href="#<%= vhs.Config.moduleName %>/edit/<%= _id %>">Edit</a>
-  <a class="btn btn-default" href="/public/files/<%= title %>" target="_blank">Download</a>
+  <!-- <a class="btn btn-default" href="/public/files/<%= title %>" target="_blank">Download</a> -->
 </div>
 

@@ -1,0 +1,41 @@
+{
+  "moduleName": "FindsiteModule",
+  "name": "FindsiteModule",
+  "modelName": "Find",
+  "collectionName": "Findsites",
+  "url": "/findsites/",
+  "urlRoot": "findsites",
+  "dbTable": "findsites",
+  "navigation": true,
+  "fields": [
+    "title",
+    "description",
+    "category"
+  ],
+  "columns": ["title", "crdate"],
+  "model": {
+    "title" : {
+      "required": true,
+      "db": "String",
+      "type": "text"
+    },
+    "description" : {
+      "db": "String",
+      "type": "textarea"
+    },
+    "points" : {
+      "db": [],
+      "type": "hidden"
+    },
+    "type" : {
+      "db": "String",
+      "type": "hidden"
+    },
+    "category" : {
+      "db": "String",
+      "type": "select",
+      "label": "title",
+      "collection": "Categories"
+    }
+  }
+}

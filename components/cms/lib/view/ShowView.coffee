@@ -5,7 +5,7 @@ define [
   'cs!Router'
   'marionette'
   'tpl!lib/templates/show.html'
-  'cs!modules/files/view/RelatedFileView'
+  'cs!sysmodules/files/view/RelatedFileView'
 ], (App, i18n, Utils, Router, Marionette, Template, RelatedFileView) ->
 
   class ShowView extends Marionette.LayoutView
@@ -19,4 +19,4 @@ define [
       @on "render", @afterRender, @
 
     templateHelpers: ->
-      vhs: _.extend Utils.Viewhelpers, Config: @options.Config, t: attributes: _.extend @options.i18n.attributes, i18n.attributes
+      vhs: _.extend Utils.Viewhelpers, config: @options.Config, Config: @options.Config, t: attributes: _.extend @options.i18n.attributes, i18n.attributes

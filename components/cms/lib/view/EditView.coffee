@@ -6,7 +6,7 @@ define [
   'cs!Router'
   'marionette'
   'tpl!lib/templates/edit.html'
-  'cs!modules/files/view/RelatedFileView'
+  'cs!sysmodules/files/view/RelatedFileView'
   'bootstrap-datetimepicker'
   'jquery.tinymce'
   'jquery.minicolors'
@@ -17,6 +17,8 @@ define [
 
   class EditView extends Marionette.LayoutView
     template: Template
+    templateHelpers: ->
+      vhs: _.extend Utils.Viewhelpers, config: @options.Config, Config: @options.Config, t: attributes: _.extend @options.i18n.attributes, i18n.attributes
     regions:
       relatedRegion: "#relations"
 
@@ -30,10 +32,6 @@ define [
       @renderRelatedViews()
       @initFields()
 
-    templateHelpers: ->
-      vhs: _.extend Utils.Viewhelpers,
-        Config: @options.Config,
-        t: attributes: _.extend @options.i18n.attributes, i18n.attributes
 
     getFields:->
       @options.Config.model
@@ -107,7 +105,7 @@ define [
         success: ->
 
     initFields: ->
-      @$el.find(".datepicker").datetimepicker showToday:true
+      @$el.find(".datepicker").datetimepicker()
       @$el.find('[data-toggle=tooltip]').tooltip
         placement: 'right'
         container: 'body'

@@ -11,6 +11,6 @@ define [
       size = App.Subcategories.findWhere(_id: @model.get("subcategory")).get "size"
       strokeColor: color
       path:App.google.SymbolPath[path]
-      scale: size or 5
+      scale: parseInt(size) or 5
 
 

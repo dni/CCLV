@@ -7,11 +7,12 @@ define [
 
     constructor: (args)->
       super args
-      unless @RelatedViews? then return c.l "no related Views, try to specify RelatedViews, or simply use the Standard Controller"
+      unless @RelatedViews?
+        return c.l "no related Views, try to specify RelatedViews, or simply use the Standard Controller"
       unless @RelatedView? then @RelatedView = RelatedView
 
-    newDetailView:(model)->
-      @detailView = new @DetailView
+    newEditView:(model)->
+      @detailView = new @EditView
         model: model
         Config: @Config
         i18n: @i18n

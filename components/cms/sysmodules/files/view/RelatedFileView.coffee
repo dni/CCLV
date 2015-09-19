@@ -17,11 +17,9 @@ define [
     events:
       "click img": "showFile"
     showFile: ->
-      App.overlayRegion.currentView.childRegion.show new ShowFileView
-        model: @model
+      Router.navigate @model.getHref(), trigger:true
 
   class RelatedFileView extends Marionette.CompositeView
-    className: "container"
     childView: ItemView
     childViewContainer: ".file-list"
     template: Template
@@ -34,10 +32,11 @@ define [
       "click @ui.addFile": "add"
 
     add:->
-      App.overlayRegion.currentView.childRegion.show new BrowseView
+      App.view.overlayRegion.currentView.childRegion.show new BrowseView
         model: @model
         fieldrelation: @fieldrelation
         multiple: @multiple
+      Router.navigate "#FileModule/browse/#{@model.get("_id")}"
 
     updateButton:->
       return if @multiple
