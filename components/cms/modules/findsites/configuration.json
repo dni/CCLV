@@ -23,6 +23,14 @@
       "db": "String",
       "type": "textarea"
     },
+    "points" : {
+      "db": [],
+      "type": "hidden"
+    },
+    "type" : {
+      "db": "String",
+      "type": "hidden"
+    },
     "category" : {
       "db": "String",
       "type": "select",

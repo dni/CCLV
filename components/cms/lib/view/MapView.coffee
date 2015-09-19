@@ -33,7 +33,9 @@ define [
         zoom:20
         mapTypeId: App.google.MapTypeId.HYBRID
         disableDefaultUI: true
-        mapTypeControl: false
+        mapTypeControl: true
+        mapTypeControlOptions:
+          position: App.google.ControlPosition.RIGHT_BOTTOM
         panControl: true
         panControlOptions:
           position: App.google.ControlPosition.RIGHT_BOTTOM
@@ -44,7 +46,6 @@ define [
         scaleControl: true
         scaleControlOptions:
           position: App.google.ControlPosition.RIGHT_BOTTOM
-        streetViewControl: false
 
     startPositionTracking:->
       pos = new App.google.LatLng App.position.coords.latitude,
