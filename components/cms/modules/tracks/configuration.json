@@ -10,14 +10,14 @@
     "buttons": ["toggleRecord"],
     "create": false
   },
-  "fields": [ ],
-  "columns": ["user", "crdate"],
+  "fields": [ "duration", "enddate" ],
+  "columns": ["user", "duration", "crdate"],
   "model": {
-    "start" : {
-      "db": "Date",
-      "type": "date"
+    "duration" : {
+      "db": "Number",
+      "type": "text"
     },
-    "end" : {
+    "enddate" : {
       "db": "Date",
       "type": "date"
     },

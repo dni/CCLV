@@ -12,11 +12,16 @@
       "sub": true,
       "button": "user"
     },
-    "columns": ["title", "username", "email"],
-    "fields": ["title", "email", "username", "password"],
+    "columns": ["color", "title", "username", "email"],
+    "fields": ["color", "title", "email", "username", "password"],
     "model": {
         "title" : {
           "type": "text",
+          "db": "String"
+        },
+        "color" : {
+          "type": "color",
+          "default": "#000000",
           "db": "String"
         },
         "username": {

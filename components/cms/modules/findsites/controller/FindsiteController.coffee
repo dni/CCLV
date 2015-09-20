@@ -21,21 +21,27 @@ define [
         points
 
     createPolygon: (polygon)=>
-      App.Findsites.create @createNewModel().set
+      model = @createNewModel().set
         type: "polygon"
         points: @getPointsLatLng polygon
+      App.Findsites.create model,
+        wait:true
 
     createPolyline: (polyline)->
-      App.Findsites.create @createNewModel().set
+      model = @createNewModel().set
         type: "polyline"
         points: @getPointsLatLng polyline
+      App.Findsites.create model,
+        wait:true
 
     createCircle: (circle)->
       center = circle.getCenter()
-      App.Findsites.create @createNewModel().set
+      model = @createNewModel().set
         type: "circle"
         points: [
           { lat: center.lat(), lng: center.lng() }
           circle.getRadius() # points[1] = radius
         ]
+      App.Findsites.create model,
+        wait:true
 

@@ -38,7 +38,8 @@ define [
 
     initUi: ->
       @ui = published: "[name=published]"
-      @ui[key] = "[name="+key+"]" for key, arg of @getFields()
+      for key, arg of @getFields()
+        @ui[key] = "[name="+key+"]" unless arg.type is "hidden"
       @bindUIElements()
 
     setValuesFromUi: ()->
@@ -51,6 +52,7 @@ define [
         if field.type is "checkbox"
           @model.set key, @ui[key].prop('checked')
         else
+          console.log key
           @model.set key, @ui[key].val()
 
     showRelatedView: =>
@@ -99,7 +101,7 @@ define [
         Router.navigate @model.getHref(), trigger:true
 
     deleteModel: ->
-      App.overlayRegion.currentView.childRegion.empty()
+      App.view.overlayRegion.currentView.childRegion.empty()
       Router.navigate @options.Config.moduleName, trigger:true
       @model.destroy
         success: ->

@@ -1,8 +1,9 @@
 define [
   'marionette'
   'cs!App'
+  'cs!Router'
   'cs!lib/view/MapItemView'
-], (Marionette, App, MapItemView ) ->
+], (Marionette, App, Router, MapItemView ) ->
 
   class MapSitesItemView extends Marionette.ItemView
 
@@ -17,8 +18,15 @@ define [
     render: ->
       @createItem()
 
+    initItem:->
+      @listener = App.google.event.addListener @item, 'click', =>
+        Router.navigate @model.getHref(), trigger:true
+      @item.setMap App.map
+
+
     destroyItem:->
       @item.setMap null
+      App.google.event.removeListener @listener
 
     updateItem:->
       @destroyItem()
@@ -29,6 +37,7 @@ define [
       if type is "polygon" then @createPolygon()
       if type is "polyline" then @createPolyline()
       if type is "circle" then @createCircle()
+      @initItem()
 
     getColor: ->
       category = App.Categories.findWhere(_id: @model.get("category"))
@@ -46,7 +55,7 @@ define [
         fillColor: @getColor()
         strokeOpacity: 1.0
         strokeWeight: 2
-      @item.setMap App.map
+
 
     createPolygon:->
       that = @
@@ -58,7 +67,6 @@ define [
         strokeOpacity: 1.0
         strokeOpacity: 1.0
         strokeWeight: 2
-      @item.setMap App.map
 
     createPolyline:->
       that = @
@@ -70,5 +78,3 @@ define [
         strokeOpacity: 1.0
         strokeOpacity: 1.0
         strokeWeight: 2
-      @item.setMap App.map
-

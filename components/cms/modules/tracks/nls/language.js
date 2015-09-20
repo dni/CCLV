@@ -3,7 +3,9 @@ define({
     "navigation": "Tracks",
     "details": "Track details",
     "attributes":  {
-      "points": "Punkte"
+      "enddate": "Enddate",
+      "duration": "Duration",
+      "points": "Points"
     },
     "toggleRecord": "Toggle Recording",
     "emptyMessage": "The track does not exist anymore",

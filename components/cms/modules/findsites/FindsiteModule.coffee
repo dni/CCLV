@@ -13,11 +13,14 @@ define [
 
   App.google.event.addListener App.drawingManager, 'circlecomplete', (circle)->
     module.Controller.createCircle circle
+    circle.setMap null
 
   App.google.event.addListener App.drawingManager, 'polygoncomplete', (polygon)->
     module.Controller.createPolygon polygon
+    polygon.setMap null
 
   App.google.event.addListener App.drawingManager, 'polylinecomplete', (polyline)->
     module.Controller.createPolygon polyline
+    polyline.setMap null
 
   module

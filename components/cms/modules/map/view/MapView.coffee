@@ -24,7 +24,6 @@ define [
 
     initDrawing:->
       App.drawingManager = new App.google.drawing.DrawingManager
-        drawingMode: App.google.drawing.OverlayType.MARKER
         drawingControl: true
         drawingControlOptions:
           position: App.google.ControlPosition.BOTTOM_LEFT

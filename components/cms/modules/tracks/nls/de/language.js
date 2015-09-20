@@ -7,6 +7,8 @@ define({
     "deleteModel": "hat Strecke gelöscht",
     "updateModel": "hat Strecke bearbeitet",
     "attributes": {
+        "dateend": "Datum Ende",
+        "duration": "Dauer",
         "points": "Punkte"
     }
 });

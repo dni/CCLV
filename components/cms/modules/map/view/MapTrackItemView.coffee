@@ -1,8 +1,9 @@
 define [
   'marionette'
   'cs!App'
+  'cs!Router'
   'cs!lib/view/MapItemView'
-], (Marionette, App, MapItemView ) ->
+], (Marionette, App, Router, MapItemView ) ->
 
   class MapTrackItemView extends Marionette.ItemView
 
@@ -17,8 +18,15 @@ define [
     render: ->
       @createTrack()
 
+    getColor: ->
+      model = App.Users.findWhere(_id: @model.get("cruser"))
+      if model
+        return model.get "color"
+      return "#000000"
+
     destroyTrack:->
       @track.setMap null
+      App.google.event.removeListener @listener
 
     updateTrack:->
       @destroyTrack()
@@ -29,8 +37,10 @@ define [
       @track = new google.maps.Polyline
         path: @model.get "points"
         geodesic: true
-        strokeColor: '#FF0000'
+        strokeColor: @getColor()
         strokeOpacity: 1.0
         strokeWeight: 2
       @track.setMap App.map
+      @listener = App.google.event.addListener @track, 'click', =>
+        Router.navigate @model.getHref(), trigger:true
 
