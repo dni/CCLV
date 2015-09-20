@@ -173,6 +173,7 @@ module.exports = (grunt)->
     requirejs:
       cms:
         options:
+          googlemaps: params: libraries: 'drawing'
           appDir: 'components/cms'
           baseUrl: 'vendor'
           fileExclusionRegExp: /^(server|spec)/
