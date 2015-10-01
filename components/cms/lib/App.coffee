@@ -47,11 +47,14 @@ define [
     startGeoTracking: ->
       that = this
       if navigator.geolocation
-        setInterval ->
-          navigator.geolocation.getCurrentPosition (position)->
-            that.position = position
-            that.vent.trigger "newPosition"
-        , 3000
+        success = (position)->
+          that.position = position
+          that.vent.trigger "newPosition"
+        error = (err)->
+          console.log err
+        navigator.geolocation.watchPosition success, error,
+          enableHighAccuracy: true
+          maximumAge: 0
 
     initUpload: ->
       $('#upload').change ->
